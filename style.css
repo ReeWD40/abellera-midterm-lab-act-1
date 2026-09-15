@@ -1,0 +1,133 @@
+:root {
+	font-family: Georgia, "Times New Roman", serif;
+	color: #24313d;
+	background: #e8eef1;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	background: linear-gradient(135deg, #e8eef1, #d4e1dc);
+	transition: background 180ms ease, color 180ms ease;
+}
+
+body.dark-theme {
+	color: #edf3f0;
+	background: linear-gradient(135deg, #18252a, #263c3b);
+}
+
+.page-shell {
+	width: min(960px, calc(100% - 2rem));
+	margin: 0 auto;
+	padding: 3rem 0;
+}
+
+h1 {
+	margin: 0 0 2rem;
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	letter-spacing: 0;
+}
+
+.controller-layout {
+	display: grid;
+	grid-template-columns: minmax(220px, 0.8fr) minmax(280px, 1.2fr);
+	gap: 1.5rem;
+	align-items: start;
+}
+
+.control-panel,
+.profile-card {
+	padding: 1.5rem;
+	border: 1px solid #9ab0ac;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 12px 28px rgba(36, 49, 61, 0.12);
+}
+
+.dark-theme .control-panel,
+.dark-theme .profile-card {
+	border-color: #668681;
+	background: #213534;
+}
+
+label {
+	display: block;
+	margin: 0.9rem 0 0.35rem;
+	font-weight: bold;
+}
+
+label:first-child {
+	margin-top: 0;
+}
+
+input,
+select,
+button {
+	width: 100%;
+	min-height: 2.6rem;
+	padding: 0.55rem 0.7rem;
+	border: 1px solid #7f9995;
+	border-radius: 4px;
+	font: inherit;
+}
+
+button {
+	margin-top: 1rem;
+	cursor: pointer;
+	color: #fff;
+	background: #236b66;
+	border-color: #236b66;
+}
+
+button:hover,
+button:focus-visible {
+	background: #174d4a;
+}
+
+.profile-card {
+	border-left: 8px solid #236b66;
+}
+
+.profile-card.inactive {
+	border-left-color: #a45d38;
+}
+
+.profile-card h2 {
+	margin-top: 0;
+	font-size: 2rem;
+}
+
+.details-panel {
+	margin-top: 1.5rem;
+	padding-top: 1rem;
+	border-top: 1px solid #9ab0ac;
+}
+
+.details-panel.hidden {
+	display: none;
+}
+
+#formMessage {
+	min-height: 1.4rem;
+	margin-bottom: 0;
+	color: #a23d2e;
+}
+
+.actions {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.75rem;
+	margin-top: 1rem;
+}
+
+@media (max-width: 680px) {
+	.controller-layout,
+	.actions {
+		grid-template-columns: 1fr;
+	}
+}
+
